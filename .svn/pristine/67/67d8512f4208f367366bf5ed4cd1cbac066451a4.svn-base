@@ -1,0 +1,18 @@
+1.软件目录里有一个叫RegKenGen.exe.config和网站里有一个Web.config的文件，里面会有指向数据库的路径 ，如果你改过数据库，要把这两个地方相应的修改。现在数据库是D;\web\MockGPS\MockGPS.db 
+健子毛 21:31:25 
+我给你看 
+健子毛 21:31:36 
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <appSettings>
+    <add key="ConnectionString" value="Data Source=D:\web\MockGPS\MockGPS.db"/>
+    <add key="TablePrefix" value=""/>
+  </appSettings>
+</configuration> 
+Data Source=这后面是数据库的路径  
+不然找不到数据库的 
+2.当前地址：
+	网页：D:\web\MocGPS
+	软件：D:\循环定位系统\RegKeyGen
+	数据库：D:\web\MocGPS\MockGPS.db
+3.你如果要改认证的网址的话在 res/string.xml文件里的validation_url这一项 <string name="validation_url">http 

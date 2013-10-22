@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* //device/apps/common/assets/res/any/strings.xml
+**
+** Copyright 2008, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">红磨坊模拟自动循环地理位置</string>
+	<string name="mapSearchUrl">http://maps.google.com/maps/api/geocode/json?address=<xliff:g id="value">%s</xliff:g>&amp;sensor=true</string>
+	
+	<string name="btnSet">定位</string>
+	<string name="btnSetAndFav">加入收藏</string>
+	<string name="btnStop">停止</string>
+	<string name="btnDelete">删除</string>
+	<string name="btnPause">暂停</string>
+	<string name="btnClearAllFavs">清除所有收藏</string>
+	<string name="btnExportAllFavs">导出成CSV</string>
+	<string name="btnClearAllHistory">清除所有历史记录</string>
+	<string name="btnSettings">设置</string>
+	
+	<string name="txtLat">纬度</string>
+	<string name="txtLng">经度</string>
+	
+	<string name="dialogFavTitle">加入收藏</string>
+	<string name="dialogFavLabel">名字:</string>
+	<string name="dialogFavListLabel">或者选择一个现有的</string>
+	
+	<string name="dialogFavListTitle">收藏夹</string>
+	<string name="dialogHistoryListTitle">历史</string>
+	
+	<string name="dialogSearchTitle">搜索</string>
+	<string name="dialogSearchLabel">名字:</string>
+	
+	<string name="dialogImportTitle">导入</string>
+	<string name="dialogImportLabel">CSV文件格式: 地点名称, 纬度, 经度</string>
+	
+	<string name="dialogGPSSpeedTitle">GPS速度</string>
+	<string name="dialogGPSSpeedLabel">请输入GPS速度 (m)</string>
+	
+	<string name="dialogGPSBearingTitle">GPS方位角度</string>
+	<string name="dialogGPSBearingLabel">请输入方位角度: 0 ~ 360</string>
+	
+	<string name="dialogGPSAccuracyTitle">GPS精度</string>
+	<string name="dialogGPSAccuracyLabel">I请输入GPS精度：</string>
+	
+	<string name="dialogGPSAutitudeTitle">GPS Autitude</string>
+	<string name="dialogGPSAutitudeLabel">Input autitude</string>
+	
+	
+	<string name="dialogAbout">关于</string>
+	
+	<string name="dialogTip">提示</string>
+	<string name="dialogTipContent">请检查您的手机设置: 设置-&gt;程序-&gt;开发-&gt;允许模拟地理位置,请确保该项被勾选.
+\n\n请关闭 无线网络 因为有些程序使用无线网络进行定位.
+\n\n请在使用其它定位程序前打开本程序，否则他们会使用默认GPS定位而不能模拟地点定位。</string>
+	
+	
+	<string name="searchLoadingTitle">搜索</string>
+	<string name="importLoadingTitle">导入</string>
+	<string name="importNums">导入  <xliff:g id="value">%s</xliff:g> 条记录成功.</string>
+	
+	<string name="notifyLocationLabel">当前位置</string>
+	
+	<string name="ok">确定</string>
+	<string name="cancel">取消</string>
+	<string name="save">保存</string>
+	
+	<string name="choose">选择文件</string>
+	
+	<string name="settingsImportTitle">导入数据</string>
+	<string name="settingsImportDesc">从CSV文件导入</string>
+	
+	<string name="settingsAboutTitle">关于</string>
+	<string name="settingsAboutDesc">v</string>
+	
+	<string name="settingsTipTitle">提示</string>
+	<string name="settingsTipDesc">提示信息</string>
+	
+	<string name="errorName">请输入地点名称</string>
+	<string name="errorLat">请输入纬度</string>
+	<string name="errorLng">请输入经度</string>
+	<string name="errorNoDataConnection">没有数据连接，请打开WIFI或3G连接</string>
+	<string name="errorNotFound">没有数据.</string>
+	<string name="errorMockSettingDisabled">模拟地点需要进行如下设置：设置->程序->开发->允许模拟地点，请确保此项被勾选，谢谢 . </string>
+	<string name="errorInputWrongValue">请输入正确的数值.</string>
+	
+	<string name="menuFavs">收藏夹</string>
+	<string name="menuSettings">设置</string>
+	<string name="menuSearch">搜索</string>
+	<string name="menuHistory">历史</string>
+	<string name="menuAbout">关于</string>
+	<string name="pageTitleSttings">设置</string>
+	<string name="menuExit">退出</string>
+	<string name="about_copyright">
+	</string>
+	<string name="about_contact">
+</string>
+	
+	<string name="crashToastText">哇，程序出错了，将日志发送给开发人员帮助其改进</string>
+	<string name="btnLoop">循环定位</string>
+	<string name="dialogIntervalTitle">循环间隔</string>
+	<string name="dialogIntervalLabel">循环间隔(秒)</string>
+</resources>

@@ -1,0 +1,95 @@
+package net.superliujian.mockgps;
+
+import java.util.LinkedList;
+
+import net.superliujian.mockgps.constants.Constants;
+import net.superliujian.mockgps.model.Preferences;
+
+import org.acra.CrashReportingApplication;
+
+import android.app.Activity;
+import android.content.ContentResolver;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+import android.util.Log;
+
+
+
+public class MockGPSApp extends CrashReportingApplication {
+	private static final String LOG_TAG = "MockGPSApp";
+	
+	public static LinkedList<Activity> sAllActivitys = new LinkedList<Activity>();  
+
+	public static void finishAll() {  
+        for(Activity activity : sAllActivitys) {  
+            activity.finish();  
+        }  
+          
+        sAllActivitys.clear();  
+    }  
+  
+    public static void exit() {  
+        finishAll();  
+        System.exit(0);  
+    }  
+	@Override
+	public String getFormId() {
+		return "dGluLVNxdTctMWxJbF9Da3YyYktRRGc6MQ";
+	}
+
+	@Override
+	public Uri getFormUri() {
+		return Uri
+				.parse("http://crashreport.aragoncg.com/webservices/insertcrashes/");
+	}
+
+
+	@Override
+	public Bundle getCrashResources() {
+		return null;
+		//Bundle result = new Bundle();
+		//result.putInt(RES_TOAST_TEXT, R.string.crashToastText);
+		//return result;
+	}
+	
+
+	@Override
+	public void onCreate() {
+		super.onCreate();
+		Preferences.init(this);
+		try {
+			boolean exist = Preferences.getShortCut();
+			final Intent shortCut = new Intent(this, MockGPSActivity.class);
+			final ContentResolver cr = this.getContentResolver();
+			cr
+					.notifyChange(
+							Uri
+									.parse("content://com.android.launcher.settings/favorites?notify=true"),
+							null);
+			if (!exist) {
+				String scName = getString(R.string.app_name);
+
+				Intent addShortcut = new Intent(Constants.ACTION_ADD_SHORTCUT);
+
+				shortCut.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				shortCut.addFlags(Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED);
+				shortCut.addCategory(Intent.CATEGORY_LAUNCHER);
+				shortCut.setAction(Intent.ACTION_MAIN);
+				addShortcut.putExtra(Intent.EXTRA_SHORTCUT_NAME, scName);
+				addShortcut.putExtra(Intent.EXTRA_SHORTCUT_INTENT, shortCut);
+				addShortcut.putExtra("duplicate", false);
+				addShortcut.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE,
+						Intent.ShortcutIconResource.fromContext(
+								this,
+								R.drawable.icon));
+
+				sendBroadcast(addShortcut);
+				Preferences.putShortCut(true);
+			}
+		} catch (Exception e) {
+			Log.e(LOG_TAG, "" + e.getMessage());
+		}
+	}
+
+}

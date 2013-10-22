@@ -1,0 +1,5 @@
+1.增加中文语言
+2.去除广告,去除崩溃报告，关闭升级检查
+
+
+tip:according to need google map, the phone should has google framework installed
